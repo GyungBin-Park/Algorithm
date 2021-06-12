@@ -4,5 +4,8 @@
 
 ## chapter 3. Search
 
-- 수정중
+- Sequential Search
+- Binary Search
+- Chained Hash
+- Open Addressing
 
