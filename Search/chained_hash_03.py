@@ -15,9 +15,8 @@ import hashlib
 
 
 
-
 class Node:
-    """해시를 구성하는 노드"""
+
     # 노드는 key 값, value 값, 다음 노드를 가리키고 있는 next 3가지로 이루어져 있다.
     def __init__(self, key: Any, value: Any, next: Node) -> None:
         """초기화"""
@@ -27,11 +26,10 @@ class Node:
 
 
 class ChainedHash:
-    """체인법을 해시 클래스 구현"""
 
     # 비어있는 해시 테이블을 만든다.
     def __init__(self, capacity: int) -> None:
-        """초기화"""
+
         self.capacity = capacity             # 해시 테이블의 크기를 지정
         self.table = [None] * self.capacity  # 해시 테이블(리스트)을 선언,
                                              # 처음에는 테이블 안에는 모두 None만 있다.
@@ -56,7 +54,7 @@ class ChainedHash:
     def search(self, key: Any) -> Any:
         """키가 key인 원소를 검색하여 값을 반환"""
         hash = self.hash_value_int(key)  # 검색하는 키의 해시값을 구한다.
-        # hash = self.hash_value(key)
+        # hash = self.hash_value(key\
         p = self.table[hash]         # 노드를 노드
 
         while p is not None:             # 노드가 계속 연결되어 있으면 다음 다음, 가면서 계속 찾는다.

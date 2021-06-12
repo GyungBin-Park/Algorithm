@@ -1,34 +1,23 @@
+# [Do it! 실습 3-8] 오픈 주소법을 구현하는 해시 클래스 OpenHash 사용
 
 from enum import Enum
+from open_hash_04 import OpenHash
 
-# Chainedhash 클래스를 바로 사용하겠다는 의미
-from chained_hash_03 import ChainedHash
-
-
-
-class Menu(Enum):
-    추가 = 1
-    삭제 = 2
-    검색 = 3
-    덤프 = 4
-    종료 = 5
-
-# Menu = Enum('Menu', ['추가', '삭제', '검색', '덤프', '종료'])  # 메뉴를 선언
+Menu = Enum('Menu', ['추가', '삭제', '검색', '덤프', '종료'])
 
 def select_menu() -> Menu:
     """메뉴 선택"""
     s = [f'({m.value}){m.name}' for m in Menu]
     while True:
-        print(*s, sep = '   ', end='')
+        print(*s, sep = '  ', end='')
         n = int(input(': '))
-        if 1 <=  n <=  len(Menu):
+        if 1 <=  n <= len(Menu):
             return Menu(n)
 
-hash = ChainedHash(13)     # 크기가 13인 해시 테이블을 생성
-
+hash = OpenHash(13)  # 크기가 13인 해시 테이블 생성
 
 while True:
-    menu = select_menu()   # 메뉴 선택
+    menu = select_menu()  # 메뉴 선택
 
     if menu == Menu.추가:  # 추가
         key = int(input('추가할 키를 입력하세요.: '))
