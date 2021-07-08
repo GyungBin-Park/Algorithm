@@ -31,3 +31,7 @@
 ## chapter 6. sort
 
 * bubble sort
+* insertion sort
+* selection sort
+* quick sort
+* 
